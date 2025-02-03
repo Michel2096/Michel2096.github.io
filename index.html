@@ -1,35 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <title>Mi Portafolio - Miguel Ángel</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="profile-card">
-        <img src="Profile.jpg" alt="Profile Picture">
-        <h2>Miguel Ángel López Villar </h2>
-        <p class="tit1">Project Manager: TI</p>
-        <p class="Profdes"> 
-            👨‍💻 TSU. Desarrollo de Software  <br>
-            📍 Ubicación:México <br>
-            🛠️ Habilidades: Comunicación efectiva <br>
-            Trabajo en equipo.
-        </p>
-        <p class="Profdes2" >
-           Aprendiz constante. 
-           Apasionado por la estrategia y operaciones empresariales,
-           las políticas públicas, la reputación corporativa y la tecnologia.
-        </p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/michel_angelo296/">Instagram</a>
-            <a href="https://github.com/Michel2096">GitHub</a>
-            <a href="https://x.com/mickeyluffy1">Twitter</a>
-            <a href="https://www.facebook.com/taurus.silver.9480/">Facebook</a>
+    <!-- Header Futurista -->
+    <header class="futuristic-header">
+        <div class="container">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Foto de Miguel Ángel">
+            </div>
+            <h1 class="glitch-text">Miguel Ángel LoVi</h1>
+            <p class="neon-text">Desarrollador | TSU en Desarrollo Web</p>
         </div>
+    </header>
+    
+    <!-- Navegación Futurista -->
+    <nav class="futuristic-nav">
+        <div class="container">
+            <a href="#about" class="nav-link">Sobre Mí</a>
+            <a href="#skills" class="nav-link">Habilidades</a>
+            <a href="#experience" class="nav-link">Educación</a>
+            <a href="#projects" class="nav-link">Experiecia</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+        </div>
+    </nav>
+    
+    <!-- Contenido Principal -->
+    <main class="container futuristic-main">
+        <!-- Sobre Mí -->
+        <section id="about" class="futuristic-section">
+            <h2 class="glitch-text">Sobre Mí</h2>
+            <p class="futuristic-text">Hola, soy Miguel Ángel, un desarrollador web. Actualmente, estoy cursando un Técnico Superior Universitario en Desarrollo Web, donde he adquirido habilidades en HTML, CSS, JavaScript, Laravel, PHP, Mongo DB y otras tecnologías.</p>
+        </section>
         
-    </div>
+        <!-- Habilidades -->
+        <section id="skills" class="futuristic-section">
+            <h2 class="glitch-text">Habilidades duras</h2>
+            <div class="skills-grid">
+                <div class="skill futuristic-card">
+                    <h3>HTML5</h3>
+                    <p>Maquetación semántica y accesible.</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>CSS3</h3>
+                    <p>Diseños responsive.</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>JavaScript</h3>
+                    <p>Interactividad y desarrollo frontend.</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>Git</h3>
+                    <p>Control de versiones y colaboración.</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>Laravel</h3>
+                    <p>Modelo-Vista-Controlador</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>Python</h3>
+                    <p>Desarrollo web y analisis de datos</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>Linux</h3>
+                    <p>Sistemas operativoS</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <h3>MySQL</h3>
+                    <p>Bases de datos y lenguaje</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="futuristic-section">
+            <h2 class="glitch-text">Habilidades blandas</h2>
+            <div class="skills-grid">
+                <div class="skill futuristic-card">
+                    <p>Comunicación</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <p>Inteligencia emocional</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <p>Trabajo en equipo</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <p>Liderazgo</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experiencia -->
+        <section id="experience" class="futuristic-section">
+            <h2 class="glitch-text">Educación</h2>
+            <div class="skills-grid">
+                <div class="skill futuristic-card">
+                    <p> 2019-2021  <br>TSU: Desarrollo de Negocios Area Ventas  <br> Universidad Tecnologica del Valle de Toluca</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <p> 2023-2025  <br>TSU: Desarrollo web multiplataforma  <br> Universidad Tecnologica del Valle de Toluca</p>
+                </div>
+                <div class="skill futuristic-card">
+                    <p> 2025-2026  <br>ING: Desarrollo WEB<br> Universidad Tecnologica del Valle de Toluca</p>
+                </div>
+        </section>
+        
+        <!-- Proyectos -->
+        <section id="projects" class="futuristic-section">
+            <h2 class="glitch-text">Experiencia Laboral</h2>
+            <div class="projects-grid">
+                <div class="project futuristic-card">
+                    <h3>Escato S.A de C.V</h3>
+                    <p>Becario comercial en canales directos</p>
+                    <a href="https://www.escato.com/" class="btn futuristic-btn">Ver Proyecto</a>
+                </div>
+                <div class="project futuristic-card">
+                    <h3>Met Life</h3>
+                    <p>Sub agente de ventas de polizas</p>
+                    <a href="https://www.metlife.com.mx/" class="btn futuristic-btn">Ver Proyecto</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contacto -->
+        <section id="contact" class="futuristic-section">
+            <h2 class="glitch-text">Contacto</h2>
+            <p class="futuristic-text">Si deseas contactarme, no dudes en enviarme un correo electrónico a <a href="al222311739@gmail.com" class="neon-link">al222311739@gmail.com</a> o conectemos a través de <a href="https://www.linkedin.com" target="_blank" class="neon-link">LinkedIn</a>.</p>
+        </section>
+    </main>
+
+     <!-- Redes sociales -->
+
+    <section id="social-buttons" class="futuristic-section">
+        <h2 class="glitch-text">Conéctate Conmigo</h2>
+        <div class="social-button-container">
+            <a href="https://x.com/mickeyluffy1" target="_blank" class="social-button twitter">
+                <img src="x.png" alt="" class="social-icon">
+                twitter
+            </a>
+            <a href="https://www.facebook.com/taurus.silver.9480/" target="_blank" class="social-button facebook">
+                <img src="facebook.png" alt="" class="social-icon">
+                Facebook
+            </a>
+            <a href="https://www.instagram.com/michel_angelo296/" target="_blank" class="social-button instagram">
+                <img src="instagram.png" alt="" class="social-icon">
+                Instagram
+            </a>
+            <a href="https://github.com/Michel2096" target="_blank" class="social-button github">
+                <img src="github.png" alt="" class="social-icon">
+                GitHub
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer Futurista -->
+    <footer class="futuristic-footer">
+        <div class="container">
+            <p class="neon-text">&copy; 2025 Taurus Silver Dev. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
