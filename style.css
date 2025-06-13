@@ -23,11 +23,22 @@ body {
 
 /* Header */
 header.futuristic-header {
-    background: linear-gradient(145deg, #000000, #1a1a1a);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url(fondo.jpg);
+    background-size: 600px auto;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
     color: #fff;
     padding: 20px 0;
     text-align: center;
     width: 100%;
+}
+
+@media (max-width: 700px) {
+    header.futuristic-header {
+        background-size: 600px auto;
+        background-position: left top;
+    }
 }
 
 .profile-picture {
@@ -36,8 +47,8 @@ header.futuristic-header {
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #2edbb9;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+    border: 4px solid #2e62db;
+    box-shadow: 0 0 20px rgba(0, 110, 255, 0.5), 0 0 40px rgba(17, 62, 185, 0.3);
 }
 
 .profile-picture img {
@@ -80,7 +91,7 @@ nav a.nav-link {
 }
 
 nav a.nav-link:hover {
-    text-shadow:  0 0 30px #2edbb9,0 0 20px #2edbb9;
+    text-shadow:  0 0 30px #2e62db,0 0 20px #2e62db;
 }
 
 /* Secciones */
@@ -102,11 +113,11 @@ section.futuristic-section.active {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #2edbb9;
+    color: #2e62db;
     font-family: "Saira Stencil One", serif;
     font-size: 29px;
     font-style: normal;
-    text-shadow: 0 0 60px #00ffff;
+    text-shadow: 0 0 60px #2e62db;
 }
 
 /* Habilidades */
@@ -129,13 +140,13 @@ h2 {
 
 .skill.futuristic-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.5), 0 0 10px rgba(0, 64, 255, 0.4);
 }
 
 .skill.futuristic-card h3 {
     margin: 0 0 10px;
     font-size: 1.5rem;
-    color: #2edbb9;
+    color: #2e62db;
 }
 
 /* Footer */
@@ -280,6 +291,10 @@ a {
 
 .github {
     background: linear-gradient(145deg, #333, #555);
+}
+
+.tiktok {
+    background: linear-gradient(145deg, #121111, #161515);
 }
 
 .social-button:hover {
