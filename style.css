@@ -1,303 +1,651 @@
-/* Estilos generales */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+/* Variables y estilos generales - Cyberpunk Blanco sobre Negro */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #b0b0b0;
+    --accent-color-1: #e0e0e0;
+    --accent-color-2: #c0c0c0;
+    --accent-color-3: #d0d0d0;
+    --bg-dark: #000000;
+    --bg-darker: #050505;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-highlight: rgba(255, 255, 255, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --neon-glow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #000000;
-    color: #fefcfc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', 'Exo 2', sans-serif;
+    line-height: 1.7;
+    background: 
+        radial-gradient(circle at 20% 30%, var(--bg-darker) 0%, var(--bg-dark) 100%),
+        linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+    color: var(--primary-color);
     overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 60%, rgba(255, 255, 255, 0.01) 100%);
+    z-index: -2;
+}
+
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
-    text-align: center;
+    padding: 0 20px;
 }
 
-/* Header */
-header.futuristic-header {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url(fondo.jpg);
-    background-size: 600px auto;
-    background-repeat: no-repeat;
-    background-position: left;
-    background-attachment: fixed;
-    color: #fff;
-    padding: 20px 0;
+/* Header - Cyberpunk Blanco sobre Negro */
+.glass-header {
+    padding: 80px 0 50px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, 
+        rgba(10, 10, 10, 0.9) 0%, 
+        rgba(20, 20, 20, 0.8) 100%);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.glass-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-color-1), 
+        var(--accent-color-2), 
+        var(--accent-color-3), 
+        transparent);
+    animation: scanline 3s linear infinite;
 }
 
-@media (max-width: 700px) {
-    header.futuristic-header {
-        background-size: 600px auto;
-        background-position: left top;
+@keyframes scanline {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
     }
 }
 
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
 .profile-picture {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 20px;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 35px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #2e62db;
-    box-shadow: 0 0 20px rgba(0, 110, 255, 0.5), 0 0 40px rgba(17, 62, 185, 0.3);
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.profile-picture::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.3),
+        inset 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
 .profile-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: contrast(110%) brightness(105%);
 }
 
-header h1 {
-    font-size: 3rem;
-    margin: 0;
-    color: #ffffff;
-    font-family: "Saira Stencil One", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-header p {
-    margin: 10px 0 0;
-    font-size: 1.2rem;
-    color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Navegación */
-nav.futuristic-nav {
-    background: linear-gradient(145deg, #000000, #1a1a1a);
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-nav a.nav-link {
-    color: #ffffff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-nav a.nav-link:hover {
-    text-shadow:  0 0 30px #2e62db,0 0 20px #2e62db;
-}
-
-/* Secciones */
-section.futuristic-section {
-    margin: 40px 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    line-height: 30px;
-}
-
-section.futuristic-section.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    font-size: 2.5rem;
+.mysterious-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
     margin-bottom: 20px;
-    color: #2e62db;
-    font-family: "Saira Stencil One", serif;
-    font-size: 29px;
-    font-style: normal;
-    text-shadow: 0 0 60px #2e62db;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ffffff, #e0e0e0, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: var(--neon-glow);
 }
 
-/* Habilidades */
-.skills-grid {
-    padding-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
+.tagline {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
 }
 
-.skill.futuristic-card {
-    background: #000000;
-    padding: 10px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.skill.futuristic-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 119, 255, 0.5), 0 0 10px rgba(0, 64, 255, 0.4);
-}
-
-.skill.futuristic-card h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-    color: #2e62db;
-}
-
-/* Footer */
-footer.futuristic-footer {
-    background: linear-gradient(145deg, #000000, #1a1a1a);
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 40px;
+.tagline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
     width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-color-1), 
+        var(--accent-color-2), 
+        transparent);
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
+/* Navegación - Cyberpunk Blanco sobre Negro */
+.glass-nav {
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 15, 15, 0.97);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
 }
 
-a {
-    color: #51a9ec;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* Botones Animados */
-.button-container {
+.glass-nav .container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    gap: 45px;
 }
 
-.animated-button {
-    padding: 15px 30px;
-    font-size: 1rem;
+.nav-link {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    padding: 10px 18px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color-1);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, var(--glass-highlight), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+/* Secciones - Cyberpunk Blanco sobre Negro */
+main {
+    padding: 70px 0;
+}
+
+.glass-section {
+    margin: 70px 0;
+    padding: 60px 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 
+        0 0 25px rgba(255, 255, 255, 0.08),
+        inset 0 0 25px rgba(0, 0, 0, 0.4);
+    transition: var(--transition);
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+.glass-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-color-1), 
+        var(--accent-color-2), 
+        transparent);
+}
+
+.section-title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 45px;
+    text-align: center;
+    letter-spacing: 4px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-color-1), 
+        var(--accent-color-2), 
+        transparent);
+}
+
+.mystery-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--primary-color);
+    font-weight: 300;
+}
+
+.mystery-text p {
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0 25px;
+}
+
+.mystery-text p::before {
+    content: '⟩';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color-2);
     font-weight: bold;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Efecto Neon */
-.neon-button {
-    background: linear-gradient(145deg, #007BFF, #0056b3);
-    text-shadow: 0 0 5px #007BFF, 0 0 10px #007BFF;
-    box-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF;
+/* Focus Grid - Cyberpunk Blanco sobre Negro */
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.neon-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #007BFF, 0 0 40px #007BFF;
-}
-
-/* Efecto Pulso */
-.pulse-button {
-    background: linear-gradient(145deg, #ff6f61, #e64c3c);
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px #ff6f61, 0 0 40px #ff6f61;
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
-    }
-}
-
-/* Efecto Brillo */
-.glow-button {
-    background: linear-gradient(145deg, #2edbb9, #1abc9c);
+.focus-card {
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(35, 35, 35, 0.7);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    transition: var(--transition);
     position: relative;
     overflow: hidden;
 }
 
-.glow-button::before {
+.focus-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-color-1), var(--accent-color-2));
+    transition: var(--transition);
+}
+
+.focus-card:hover::before {
+    width: 100%;
+    opacity: 0.1;
+}
+
+.focus-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color-1);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.focus-icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: var(--accent-color-2);
+    transition: var(--transition);
+}
+
+.focus-card:hover .focus-icon {
+    color: var(--accent-color-1);
+    transform: scale(1.15);
+}
+
+.focus-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.focus-card p {
+    color: var(--primary-color);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+}
+
+/* Contacto - Cyberpunk Blanco sobre Negro */
+.contact-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text p {
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 1px solid var(--accent-color-1);
+    padding: 15px 35px;
+    border-radius: 2px;
+    transition: var(--transition);
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.contact-link::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: skewX(-45deg);
-    transition: left 0.5s ease;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
 }
 
-.glow-button:hover::before {
+.contact-link:hover::before {
     left: 100%;
 }
 
-/* Botones de Redes Sociales */
-.social-button-container {
+.contact-link:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Social - Cyberpunk Blanco sobre Negro */
+.social-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-.social-button {
+.social-link {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
     text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: var(--secondary-color);
+    transition: var(--transition);
+    padding: 25px 20px;
+    border-radius: 4px;
+    width: 110px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    overflow: hidden;
 }
 
-.social-button .social-icon {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    object-fit: cover;
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.12) 0%, 
+        rgba(255, 255, 255, 0.06) 50%, 
+        transparent 100%);
+    opacity: 0;
+    transition: var(--transition);
 }
 
-.twitter {
-    background: linear-gradient(145deg, #1da1f2, #0e71c8);
+.social-link:hover::before {
+    opacity: 1;
 }
 
-.facebook {
-    background: linear-gradient(145deg, #3b579d, #3b579d);
+.social-link:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.15);
 }
 
-.instagram {
-    background: linear-gradient(145deg, #e4405f, #c32aa3);
+.social-icon {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+    transition: var(--transition);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
-.github {
-    background: linear-gradient(145deg, #333, #555);
+.social-link:hover .social-icon {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
 }
 
-.tiktok {
-    background: linear-gradient(145deg, #121111, #161515);
+.social-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
-.social-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+/* Footer - Cyberpunk Blanco sobre Negro */
+.glass-footer {
+    padding: 35px 0;
+    background: rgba(10, 10, 10, 0.95);
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+    position: relative;
+}
+
+.glass-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-color-1), 
+        var(--accent-color-2), 
+        transparent);
+}
+
+.glass-footer p {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+
+/* Efectos de animación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.floating {
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Efectos de brillo neón */
+.neon-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4), 0 0 22px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mysterious-text {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+    
+    .glass-nav .container {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .focus-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .social-container {
+        gap: 20px;
+    }
+    
+    .social-link {
+        width: 100px;
+        padding: 20px 15px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .mystery-text {
+        font-size: 1.1rem;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
 }

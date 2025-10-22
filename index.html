@@ -3,190 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio - Miguel Ángel</title>
+    <title>Miguel Angel Ralliv</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500&family=Exo+2:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Futurista -->
-    <header class="futuristic-header">
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Header -->
+    <header class="glass-header">
         <div class="container">
-            <div class="profile-picture">
-                <img src="yo1.jpg" alt="Foto de Miguel Ángel">
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="yo1.jpg" alt="Miguel Angel">
+                </div>
+                <h1 class="mysterious-text">Miguel Angel Ralliv</h1>
+                <p class="tagline">Entre líneas</p>
             </div>
-            <h1 class="glitch-text">Miguel Angel Ralliv</h1>
-            <p class="neon-text">Analista</p>
         </div>
     </header>
     
-    <!-- Navegación Futurista -->
-    <nav class="futuristic-nav">
+    <!-- Navegación -->
+    <nav class="glass-nav">
         <div class="container">
-            <a href="#about" class="nav-link">Sobre Mí</a>
-            <a href="#skills" class="nav-link">Habilidades</a>
-            <a href="#experience" class="nav-link">Educación</a>
-            <a href="#projects" class="nav-link">Experiecia</a>
-            <a href="#contact" class="nav-link">Contacto</a>
+            <a href="#about" class="nav-link">Sombra</a>
+            <a href="#focus" class="nav-link">Enfoque</a>
+            <a href="#contact" class="nav-link">Eco</a>
+            <a href="#social" class="nav-link">Huellas</a>
         </div>
     </nav>
     
-    <!-- Contenido Principal -->
-  <!--    <main class="container futuristic-main">  -->
-        <!-- Sobre Mí -->
-  <!--        <section id="about" class="futuristic-section">  -->
-     <!--         <h2 class="glitch-text">Sobre Mí</h2>  -->
-        <!--    <p class="futuristic-text"></p> -->
-  <!--        </section>  -->
+    <main>
+        <!-- Sección Sobre Mí -->
+        <section id="about" class="glass-section">
+            <div class="container">
+                <h2 class="section-title">Lo que no se ve</h2>
+                <div class="mystery-text">
+                    <p>Existe un lenguaje que pocos entienden.</p>
 
-
-         
-        <!-- Habilidades -->
-     <!--      <section id="skills" class="futuristic-section">
-            <h2 class="glitch-text"></h2>          <!-- AQUIE ES EL TITULO DE HERRAMIENTAS -->
-         <!--      <div class="skills-grid">
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <h3></h3>
-                    <p></p>
                 </div>
             </div>
         </section>
-
-        //           -->
-
-      <!--      <section id="skills" class="futuristic-section">
-            <h2 class="glitch-text"></h2>  <!-- AQUIE ES EL TITULO DE HABILIDADES -->
-           <!--     <div class="skills-grid">
-                <div class="skill futuristic-card">
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <p></p>
-                </div>
-                <div class="skill futuristic-card">
-                    <p></p>
-                </div>
-            </div>
-        </section>
--->
-
         
-        <!-- Experiencia -->
-   <!--       <section id="experience" class="futuristic-section">   -->
-    <!--          <h2 class="glitch-text">Educación</h2>           -->
-    <!--          <div class="skills-grid">   -->
-     <!--             <div class="skill futuristic-card">   -->
-            <!--           <p> 2019-2021  <br>  <br> </p>  -->
-             <!--     </div>  -->
-             <!--     <div class="skill futuristic-card">  -->
-               <!--        <p> 2023-2025  <br> <br></p>  -->
-              <!--    </div>   -->
-           <!--       <div class="skill futuristic-card">  -->
-              <!--        <p> 2025-2026  <br><br> </p>   -->
-           <!--       </div>   -->
-       <!--   </section>   -->
-        
-        <!-- Proyectos -->
-     <!--    <section id="projects" class="futuristic-section">
-            <h2 class="glitch-text"></h2>      <!-- AQUIE ES EL TITULO DE EXPERIENCIA -->
-        <!--       <div class="projects-grid">
-                <div class="project futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                    <a href="https://www.escato.com/" class="btn futuristic-btn"></a>
-                </div>
-                <div class="project futuristic-card">
-                    <h3></h3>
-                    <p></p>
-                    <a href="https://www.metlife.com.mx/" class="btn futuristic-btn"></a>
+        <!-- Sección Enfoque -->
+        <section id="focus" class="glass-section">
+            <div class="container">
+                <h2 class="section-title">Lo que no se dice</h2>
+                <div class="focus-grid">
+                    <div class="focus-card">
+                        <div class="focus-icon">⟡</div>
+                        <h3>Patrones</h3>
+ 
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-icon">⧖</div>
+                        <h3>Estructuras</h3>
+
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-icon">⌬</div>
+                        <h3>Conversiones</h3>
+
+                    </div>
                 </div>
             </div>
         </section>
--->
+        
 
         
         <!-- Contacto -->
-        <section id="contact" class="futuristic-section">
-            <h2 class="glitch-text"></h2>
-            <p class="futuristic-text"> <a href="al222311739@gmail.com" class="neon-link">   </a> o conectemos a través de <a href="https://www.linkedin.com" target="_blank" class="neon-link">LinkedIn</a>.</p>
+        <section id="contact" class="glass-section">
+            <div class="container">
+                <h2 class="section-title">Lo que no se escucha</h2>
+                <div class="contact-text">
+                 
+                    <div class="contact-links">
+                        <a href="mailto:al222311739@gmail.com" class="contact-link">Enviar un mensaje cifrado</a>
+                        <a href="https://www.linkedin.com" target="_blank" class="contact-link">Conectar en LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redes sociales -->
+        <section id="social" class="glass-section">
+            <div class="container">
+                <h2 class="section-title">Huellas digitales</h2>
+                <div class="social-container">
+                    <a href="https://x.com/mickeyluffy1" target="_blank" class="social-link">
+                        <span class="social-icon">𝕏</span>
+                        <span class="social-name">Twitter</span>
+                    </a>
+                    <a href="https://github.com/Michel2096" target="_blank" class="social-link">
+                        <span class="social-icon">⎔</span>
+                        <span class="social-name">GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/michel_ralliv/" target="_blank" class="social-link">
+                        <span class="social-icon">◐</span>
+                        <span class="social-name">Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/taurus.silver.9480/" target="_blank" class="social-link">
+                        <span class="social-icon">ƒ</span>
+                        <span class="social-name">Facebook</span>
+                    </a>
+                    <a href="https://vt.tiktok.com/ZSk9dRGyq/" target="_blank" class="social-link">
+                        <span class="social-icon">♫</span>
+                        <span class="social-name">TikTok</span>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
-
-     <!-- Redes sociales -->
-
-    <section id="social-buttons" class="futuristic-section">
-        <h2 class="glitch-text">Conéctate Conmigo</h2>
-        <div class="social-button-container">
-            <a href="https://x.com/mickeyluffy1" target="_blank" class="social-button twitter">
-                <img src="x.png" alt="" class="social-icon">
-                twitter
-            </a>
-            <a href="https://www.facebook.com/taurus.silver.9480/" target="_blank" class="social-button facebook">
-                <img src="facebook.png" alt="" class="social-icon">
-                Facebook
-            </a>
-            <a href="https://www.instagram.com/michel_ralliv/" target="_blank" class="social-button instagram">
-                <img src="Instagram.png" alt="" class="social-icon">
-                Instagram
-            </a>
-            <a href="https://github.com/Michel2096" target="_blank" class="social-button github">
-                <img src="github.png" alt="" class="social-icon">
-                GitHub
-            </a>
-            <a href="https://www.youtube.com/watch?v=c2jprxwkr0k" target="_blank" class="social-button twitter">
-                <img src="onlyfans.png" alt="" class="social-icon">
-                OnlyFans
-            </a>
-            <a href="https://vt.tiktok.com/ZSk9dRGyq/" target="_blank" class="social-button tiktok">
-                <img src="tiktok.png" alt="" class="social-icon">
-                Tik Tok
-            </a>
-
-
-        </div>
-    </section>
     
-    <!-- Footer Futurista -->
-    <footer class="futuristic-footer">
+    <!-- Footer -->
+    <footer class="glass-footer">
         <div class="container">
-            <p class="neon-text">&copy; 2025 Taurus Silver Dev. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Taurus Silver. Lo esencial es invisible a los ojos.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
-
